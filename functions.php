@@ -57,10 +57,33 @@ function custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
-function scripts() {
+//function scripts() {
+//if ( !is_admin() ) { // this if statement will insure the following code only gets added to your wp site and not the admin page cause your code has no business in the admin page right unless that's your intentions
+//		wp_register_script('instructors', ( get_bloginfo('template_url') . '/javascript/instructors.js'), false); //first register your custom script
+//		wp_enqueue_script('instructors'); // then let wp insert it for you or just delete this and add it directly to your template
+//	}
+//}
+//add_action( 'wp_print_scripts', 'scripts'); // now just run the function
+
+//mark update - restructured & disabled/enabled jquery
 if ( !is_admin() ) { // this if statement will insure the following code only gets added to your wp site and not the admin page cause your code has no business in the admin page right unless that's your intentions
-		wp_register_script('instructors', ( get_bloginfo('template_url') . '/javascript/instructors.js'), false); //first register your custom script
-		wp_enqueue_script('instructors'); // then let wp insert it for you or just delete this and add it directly to your template
-	}
+
+    function styles() {
+        wp_enqueue_style( 'itprogs', get_stylesheet_uri() );
+
+    }
+    
+    function scripts() {
+        // unload bundled jQuery and load from cdn for faster load time
+		wp_deregister_script('jquery');
+        //load from cdn
+		wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', array(), null, false);
+		//load jQuery before other js that require jQuery
+        wp_enqueue_script('jquery');        
+        wp_register_script('instructors', ( get_bloginfo('template_url') . '/javascript/instructors.js'), false); //first register your custom script
+        wp_enqueue_script('instructors'); // then let wp insert it for you or just delete this and add it directly to your template
+    }
+    
+    add_action( 'wp_enqueue_scripts', 'styles', 11); // now just run the function
+    add_action( 'wp_enqueue_scripts', 'scripts', 12); // now just run the function
 }
-add_action( 'wp_print_scripts', 'scripts'); // now just run the function

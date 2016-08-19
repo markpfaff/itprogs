@@ -26,6 +26,11 @@ a:active {color:#FFFF00; text-decoration:underline;}*/
 
 }
 
+#logo img {
+    height:140px;
+    width:400px;
+}
+
 /* * * * * * *
 
 narrowcolumn is your content when it has a sidebar
@@ -494,3 +499,13 @@ select {
 
 #wp-calendar td.pad:hover { /* Doesn't work in IE */
  background-color:#fff;}
+
+/*
+media breakpoints:
+
+980px
+
+600px
+
+320px
+*/

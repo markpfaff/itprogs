@@ -77,5 +77,23 @@
     <!--/torso-->
 
     <?php wp_footer(); ?>
+<!--    mark update - mobile navigation toggle-->
+    <script>
+        $(document).ready(function(){   
+
+            //Open and close mobile navigation:
+            $(".nav-button").click(function () {
+                $(".nav-button,#main-nav").toggleClass("open");
+                });
+                
+            //Caret for dropdown mobile on menu    
+            $("li.menu-item-has-children").append("<span class=\"caret\"></span>");
+            
+            //Open and close mobile child menus:
+            $(".caret").click(function () {
+                $(this).parent().toggleClass("open-child-menu");
+                });            
+        });  
+    </script>
     </body>
 </html>

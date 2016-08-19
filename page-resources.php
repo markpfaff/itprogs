@@ -10,19 +10,6 @@ Template Name: Resources
 
 get_header(); ?>
 
-<aside id="sidebar">
-<?php if ( is_active_sidebar( 'home_right' ) ) : ?>
-
-<?php dynamic_sidebar( 'home_right' ); ?>
-
-<?php else : ?>
-
-<!-- Create some custom HTML or call the_widget().  It's up to you. -->
-
-<?php endif; ?>
-
-</aside>
-
     <!-- Begin aside -->
     <?php get_sidebar('subnav'); ?>
     <!-- End aside -->
@@ -114,6 +101,17 @@ get_header(); ?>
         
 	</section><!-- End Content --> 
 
+<aside id="sidebar">
+<?php if ( is_active_sidebar( 'home_right' ) ) : ?>
 
+<?php dynamic_sidebar( 'home_right' ); ?>
+
+<?php else : ?>
+
+<!-- Create some custom HTML or call the_widget().  It's up to you. -->
+
+<?php endif; ?>
+
+</aside>
 
 <?php get_footer(); ?>

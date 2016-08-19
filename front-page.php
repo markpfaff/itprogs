@@ -6,18 +6,7 @@
 
 get_header(); ?>
 
-<aside id="sidebar">
-<?php if ( is_active_sidebar( 'home_right' ) ) : ?>
 
-<?php dynamic_sidebar( 'home_right' ); ?>
-
-<?php else : ?>
-
-<!-- Create some custom HTML or call the_widget().  It's up to you. -->
-
-<?php endif; ?>
-
-</aside>
 
 <div id="home-content">
 
@@ -41,18 +30,7 @@ get_header(); ?>
         </section>
 
 
-    <aside id="alliances">
-    <?php if ( is_active_sidebar( 'home_left' ) ) : ?>
 
-    <?php dynamic_sidebar( 'home_left' ); ?>
-
-    <?php else : ?>
-
-    <!-- Create some custom HTML or call the_widget().  It's up to you. -->
-
-    <?php endif; ?>  
-    
-    </aside>
 
     <section id="announcements">
 
@@ -79,7 +57,29 @@ get_header(); ?>
 	<?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
 	
     </section>
+    <aside id="alliances">
+    <?php if ( is_active_sidebar( 'home_left' ) ) : ?>
 
+    <?php dynamic_sidebar( 'home_left' ); ?>
+
+    <?php else : ?>
+
+    <!-- Create some custom HTML or call the_widget().  It's up to you. -->
+
+    <?php endif; ?>  
+    
+    </aside>
 </div>
+<aside id="sidebar">
+<?php if ( is_active_sidebar( 'home_right' ) ) : ?>
 
+<?php dynamic_sidebar( 'home_right' ); ?>
+
+<?php else : ?>
+
+<!-- Create some custom HTML or call the_widget().  It's up to you. -->
+
+<?php endif; ?>
+
+</aside>
 <?php get_footer(); ?>

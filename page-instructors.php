@@ -6,10 +6,6 @@
 
 get_header(); ?>
 
-<!-- Begin aside -->
-<?php get_sidebar('subnav'); ?>
-<!-- End aside -->
-
 <section id="content" role="main">
 
     <nav class="breadcrumbs">
@@ -140,6 +136,8 @@ get_header(); ?>
 	</section><!-- End Sub-Pages -->
 
 	</section><!-- End Content -->
-
+<!-- Begin aside -->
+<?php get_sidebar('subnav'); ?>
+<!-- End aside -->
 
 <?php get_footer(); ?>

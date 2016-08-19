@@ -6,19 +6,6 @@
 
 get_header(); ?>
 
-<aside id="sidebar">
-<?php if ( is_active_sidebar( 'home_right' ) ) : ?>
-
-<?php dynamic_sidebar( 'home_right' ); ?>
-
-<?php else : ?>
-
-<!-- Create some custom HTML or call the_widget().  It's up to you. -->
-
-<?php endif; ?>
-
-</aside>
-
     <aside id="alliances">
     <?php if ( is_active_sidebar( 'page_left' ) ) : ?>
 
@@ -74,5 +61,16 @@ get_header(); ?>
 	<?php endif; ?>
 
 	</div>
+<aside id="sidebar">
+<?php if ( is_active_sidebar( 'home_right' ) ) : ?>
 
+<?php dynamic_sidebar( 'home_right' ); ?>
+
+<?php else : ?>
+
+<!-- Create some custom HTML or call the_widget().  It's up to you. -->
+
+<?php endif; ?>
+
+</aside>
 <?php get_footer(); ?>

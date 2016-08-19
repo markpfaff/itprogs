@@ -11,6 +11,8 @@
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <meta name="description" content="<?php bloginfo('description'); ?>">
 <meta name="keywords" content="keywords" />
+<!--mark update - make responsive-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
 <!--<title><?php /*wp_title('&laquo;', true, 'right');*/ ?> <?php /*bloginfo('name');*/ ?></title>-->
 
@@ -69,7 +71,18 @@ wp_enqueue_script('jquery'); // you can either let wp insert this for you or jus
 
         <header id="hd">
             <div class="wrapper">
-                <h1 id="logo"><a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_url'); ?>/images/logo.png" alt="Information Technology Programs" height="140" width="400"/></a><span>Information Technology Programs</span></h1>
+                <h1 id="logo">
+                    <a href="<?php bloginfo('url'); ?>">
+                        <img src="<?php bloginfo('template_url'); ?>/images/logo.png" alt="Information Technology Programs"/>
+                    </a>
+                    <span>Information Technology Programs</span>
+                </h1>
+                <h1 id="mobile-logo">
+                    <a href="<?php bloginfo('url'); ?>">
+                        <img src="<?php bloginfo('template_url'); ?>/images/logo-mobile.png" alt="Information Technology Programs"/>
+                    </a>
+                    <span>Information Technology Programs</span>
+                </h1>                
                 <section id="head-right">
                  <?php get_search_form(); ?> 
                     <h2 id="sccc-logo"><a href="http://www.seattlecentral.org/" target="_blank"><img src="<?php bloginfo('template_url'); ?>/images/color-horizontal-webSMALL.png" alt="Seattle Central Community College" /></a><span>Seattle Central College</span></h2>
@@ -80,6 +93,9 @@ wp_enqueue_script('jquery'); // you can either let wp insert this for you or jus
                 		'theme_location' => 'main-menu',
                 		'menu' => 'main-menu'
                 	)); ?>
+<!--    mark update start mobile menu-->
+                <button class="nav-button">Toggle Navigation</button>
+<!--    end mobile menu-->
                 </nav>
 
             </div>
