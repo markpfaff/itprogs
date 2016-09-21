@@ -10,9 +10,7 @@ Template Name: Resources
 
 get_header(); ?>
 
-    <!-- Begin aside -->
-    <?php get_sidebar('subnav'); ?>
-    <!-- End aside -->
+
 
 	<section id="middle_content" role="main">
     
@@ -98,7 +96,9 @@ get_header(); ?>
         <?php endforeach; endif;
         ?>
 
-        
+            <!-- Begin aside -->
+    <?php get_sidebar('subnav'); ?>
+    <!-- End aside -->
 	</section><!-- End Content --> 
 
 <aside id="sidebar">
